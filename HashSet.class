@@ -1,4 +1,4 @@
-```
+
 /*
  * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -33,7 +33,8 @@ import java.io.InvalidObjectException;
  * (actually a <tt>HashMap</tt> instance).  It makes no guarantees as to the
  * iteration order of the set; in particular, it does not guarantee that the
  * order will remain constant over time.  This class permits the <tt>null</tt>
- * element.
+ * element. 
+ 实现了Set接口，是HashMap的一个实例，不保证迭代的顺序，允许Null元素
  *
  * <p>This class offers constant time performance for the basic operations
  * (<tt>add</tt>, <tt>remove</tt>, <tt>contains</tt> and <tt>size</tt>),
@@ -49,6 +50,7 @@ import java.io.InvalidObjectException;
  * the threads modifies the set, it <i>must</i> be synchronized externally.
  * This is typically accomplished by synchronizing on some object that
  * naturally encapsulates the set.
+ 此实现是不同步的
  *
  * If no such object exists, the set should be "wrapped" using the
  * {@link Collections#synchronizedSet Collections.synchronizedSet}
@@ -86,7 +88,7 @@ import java.io.InvalidObjectException;
  * @see     HashMap
  * @since   1.2
  */
-
+// 
 public class HashSet<E>
     extends AbstractSet<E>
     implements Set<E>, Cloneable, java.io.Serializable
@@ -103,7 +105,7 @@ public class HashSet<E>
      * default initial capacity (16) and load factor (0.75).
      */
     public HashSet() {
-        map = new HashMap<>();
+        map = new HashMap<>(); 
     }
 
     /**
@@ -111,6 +113,7 @@ public class HashSet<E>
      * collection.  The <tt>HashMap</tt> is created with default load factor
      * (0.75) and an initial capacity sufficient to contain the elements in
      * the specified collection.
+     构造了一个HashMap , 负载因子0.75，默认容量16
      *
      * @param c the collection whose elements are to be placed into this set
      * @throws NullPointerException if the specified collection is null
@@ -211,6 +214,8 @@ public class HashSet<E>
      * <tt>(e==null&nbsp;?&nbsp;e2==null&nbsp;:&nbsp;e.equals(e2))</tt>.
      * If this set already contains the element, the call leaves the set
      * unchanged and returns <tt>false</tt>.
+     
+     添加元素需要满足这些条件 e==null ? e2==null : e.equals(e2)
      *
      * @param e element to be added to this set
      * @return <tt>true</tt> if this set did not already contain the specified
@@ -247,7 +252,7 @@ public class HashSet<E>
     /**
      * Returns a shallow copy of this <tt>HashSet</tt> instance: the elements
      * themselves are not cloned.
-     *
+     * 浅拷贝
      * @return a shallow copy of this set
      */
     @SuppressWarnings("unchecked")
@@ -353,4 +358,4 @@ public class HashSet<E>
     }
 }
 
-```
+ 
