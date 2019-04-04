@@ -1,8 +1,8 @@
 `ActivityThread`  [在线源码](http://androidxref.com/8.1.0_r33/xref/frameworks/base/core/java/android/app/ActivityThread.java)
 首先看看这个类是个什么东西，从名字来看，是Activity 的Thread。
-`
+```java
 public final class ActivityThread extends ClientTransactionHandler {
-`
+```
 `ActivityThread` 继承了 `ClientTransactionHandler` 这个类， 这个类又是干嘛的呢？
 ```java
 /**
@@ -88,5 +88,3 @@ public static void main(String[] args) {
         throw new RuntimeException("Main thread loop unexpectedly exited");
     }
 ```
-
-* 1. 
