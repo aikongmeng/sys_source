@@ -1,3 +1,11 @@
+
+ 此类实现 Set 接口， 实际上是一个 HashMap 实例。
+ 它不保证 set 的迭代顺序；
+ 允许使用 null 元素。
+ 此实现不是同步的。
+
+ Set s = Collections.synchronizedSet(new HashSet(...));
+ 
 ``` java
 /*
  * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
